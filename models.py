@@ -1,4 +1,5 @@
 questions_list=[]
+answer_list=[]
 userList=[]
 class Users(object):
 
@@ -13,7 +14,6 @@ class Users(object):
     def post_question(self,quiz_id,title,description,date_created,date_modified):
         quiz=Questions(quiz_id,title,description,date_created,date_modified,self.email)
         questions_list.append(quiz)
-        
 
 class Questions(object):
 
