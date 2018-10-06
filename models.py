@@ -25,9 +25,12 @@ class Answers(object):
         self.date_modified=date_modified
         self.contributor=contributor
 
+class Admin(Users):
+    def __init__(self,email,password,role):
+        self.role=role
 
 
 
 if __name__ == '__main__':
     sammy=Users("samimbugwa@gmail.com","123ert")
-    
+    sammy2=Admin("samimbugwa@gmail.com","123ert","admin")
