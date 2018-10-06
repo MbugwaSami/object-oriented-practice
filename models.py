@@ -1,10 +1,24 @@
-userDetails={}
+questions_list=[]
+answer_list=[]
 userList=[]
+answer_list=[]
 class Users(object):
 
     def __init__(self,email,password):
         self.email=email
         self.password=password
+
+    def create_account(self):
+        user=Users(self.email,self.password)
+        userList.append(user)
+
+    def post_question(self,quiz_id,title,description,date_created,date_modified):
+        quiz=Questions(quiz_id,title,description,date_created,date_modified,self.email)
+        questions_list.append(quiz)
+
+    def post_answer(self,ans_id,description,date_answered,date_modified):
+          ans=Answers(self,ans_id,description,date_answered,date_modified,self.email)
+          answer_list.append(ans)
 
 class Questions(object):
 
@@ -15,6 +29,9 @@ class Questions(object):
         self.date_created=date_created
         self.date_modified=date_modified
         self.owner=owner
+
+
+
 
 class Answers(object):
 
@@ -33,4 +50,4 @@ class Admin(Users):
 
 if __name__ == '__main__':
     sammy=Users("samimbugwa@gmail.com","123ert")
-    sammy2=Admin("samimbugwa@gmail.com","123ert","admin")
+    sammy.post_question("1","python","how to install python 2","5-10-2018","6-10-2018")
