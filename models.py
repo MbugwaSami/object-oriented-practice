@@ -51,3 +51,4 @@ class Admin(Users):
 if __name__ == '__main__':
     sammy=Users("samimbugwa@gmail.com","123ert")
     sammy.post_question("1","python","how to install python 2","5-10-2018","6-10-2018")
+
