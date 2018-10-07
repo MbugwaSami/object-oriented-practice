@@ -11,7 +11,6 @@ class Users(object):
     def create_account(self):
         user=Users(self.email,self.password)
         userList.append(user)
-
     def post_question(self,quiz_id,title,description,date_created,date_modified):
         quiz=Questions(quiz_id,title,description,date_created,date_modified,self.email)
         questions_list.append(quiz)
@@ -19,7 +18,6 @@ class Users(object):
     def post_answer(self,ans_id,description,date_answered,date_modified):
           ans=Answers(self,ans_id,description,date_answered,date_modified,self.email)
           answer_list.append(ans)
-
 class Questions(object):
 
     def __init__(self,quiz_id,title,description,date_created,date_modified,owner):
